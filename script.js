@@ -1,3 +1,5 @@
+const clickSound = new Audio("270304__littlerobotsoundfactory__collect_point_00.mp3");
+
 let scores = [0, 0];
 const scoreEls = [
   document.getElementById("score1"),
@@ -27,11 +29,15 @@ document.querySelectorAll(".plus").forEach(btn => {
     const scoreEl = scoreEls[player - 1];
     scoreEl.textContent = scores[player - 1];
 
-    // ANIMAZIONE bump
+    // Suono
+    clickSound.currentTime = 0; // Riavvia se viene cliccato velocemente
+    clickSound.play();
+
+    // Animazione
     scoreEl.classList.add("bump");
     setTimeout(() => scoreEl.classList.remove("bump"), 300);
 
-    // PARTICELLE per giocatore specifico
+    // Sparkle
     for (let i = 0; i < 10; i++) {
       createSparkle(e.clientX, e.clientY, player);
     }
