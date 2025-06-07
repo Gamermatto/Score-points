@@ -96,7 +96,7 @@ window.addEventListener("load", () => {
   setTimeout(() => {
     window.scrollTo(0, 1); // nasconde barra ricerca mobile
   }, 10);
-}),
+});
 
 // Salva in localStorage
 function saveData() {
