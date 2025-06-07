@@ -92,7 +92,7 @@ document.addEventListener("touchend", function (event) {
 window.addEventListener("load", () => {
   setTimeout(() => {
     window.scrollTo(0, 1); // scroll verso il basso per nascondere la barra
-  }, 10
+  }), 10
 
 // Salva in localStorage
 function saveData() {
