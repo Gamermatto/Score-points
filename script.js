@@ -30,7 +30,10 @@ document.querySelectorAll(".plus").forEach(btn => {
     scoreEl.textContent = scores[player - 1];
 
     // Suono
-    clickSound.play();
+    clickSound.currentTime = 0;
+    clickSound.play().catch(err => {
+      console.warn("Audio non riprodotto:", err);
+    });
 
     // Animazione
     scoreEl.classList.add("bump");
