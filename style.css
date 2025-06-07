@@ -295,17 +295,18 @@ input[type="text"]:focus {
 
 /* Bottone Fine partita */
 #endGame {
-  margin-top: 15px;
-  background-color: var(--color-accent);
-  color: var(--color-bg);
+  background-color: var(--color-danger);
+  color: white;
   border: none;
-  padding: 12px 24px;
-  font-size: 1rem;
-  border-radius: var(--radius);
+  border-radius: 50%;
+  padding: 16px;
+  font-size: 20px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  width: 90%;
-  max-width: 280px;
+  height: 60px;
+  width: 60px;
+  align-self: center;
+  transition: transform 0.4s ease, background-color 0.3s;
+  box-shadow: var(--shadow);
 }
 
 #endGame:hover {
