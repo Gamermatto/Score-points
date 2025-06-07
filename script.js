@@ -73,6 +73,22 @@ nameInputs.forEach((input, index) => {
   });
 });
 
+// Previene doppio tap zoom su iOS
+let lastTouchEnd = 0;
+document.addEventListener("touchend", function (event) {
+  const now = new Date().getTime();
+  if (now - lastTouchEnd <= 300) {
+    event.preventDefault();
+  }
+  lastTouchEnd = now;
+}, false);
+
+// Nasconde barra di ricerca
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    window.scrollTo(0, 1); // scroll verso il basso per nascondere la barra
+  }, 10
+
 // Salva in localStorage
 function saveData() {
   localStorage.setItem("scoreData", JSON.stringify({
