@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contatori Giocatori</title>
+  <link rel="stylesheet" href="style.css">
+	<style>
+  body {
+    position: relative;
+    overflow-x: hidden;
+  }
+</style>
+</head>
+<body>
+  <h1>Contatori Giocatori</h1>
+
+  <div class="container">
+    <div class="player">
+      <input type="text" id="name1" value="Giocatore 1">
+      <div class="score" id="score1">0</div>
+      <button class="plus" data-player="1">+1 Punto</button>
+    </div>
+
+    <button id="reset">🔁</button>
+
+    <div class="player">
+      <input type="text" id="name2" value="Giocatore 2">
+      <div class="score" id="score2">0</div>
+      <button class="plus" data-player="2">+1 Punto</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
