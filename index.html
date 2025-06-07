@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Score points</title>
+  <title>Contatori Giocatori</title>
   <link rel="stylesheet" href="style.css">
 	<style>
   body {
@@ -13,7 +13,7 @@
 </style>
 </head>
 <body>
-  <h1>Score points</h1>
+  <h1>Contatori Giocatori</h1>
 
   <div class="container">
     <div class="player">
@@ -26,17 +26,19 @@
 		<button id="endGame">⏹</button>
 		
 		<div id="menuToggle">
-  <input type="checkbox" />
-  <span></span>
-  <span></span>
-  <span></span>
+  <input type="checkbox" id="menuCheckbox" />
+  <label for="menuCheckbox">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
 
   <div id="menu">
     <h2>Cronologia Partite</h2>
     <div id="historyContainer"></div>
   </div>
 </div>
-    
+
     <div class="player">
       <input type="text" id="name2" value="Giocatore 2">
       <div class="score" id="score2">0</div>
