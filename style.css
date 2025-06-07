@@ -179,7 +179,7 @@ input[type="text"]:focus {
   position: fixed;
   top: 20px;
   right: 20px;
-  z-index: 1000;
+  z-index: 1001;
   user-select: none;
   width: 30px;
   height: 25px;
@@ -194,7 +194,7 @@ input[type="text"]:focus {
   background: var(--color-text);
   border-radius: 2px;
   position: relative;
-  z-index: 1000;
+  z-index: 1001;
   transition: all 0.3s ease;
 }
 
@@ -235,7 +235,7 @@ input[type="text"]:focus {
   overflow-y: auto;
   color: var(--color-text);
   font-family: 'Segoe UI', Roboto, sans-serif;
-  z-index: 999;
+  z-index: 1000;
 }
 
 /* Quando il menu è aperto */
