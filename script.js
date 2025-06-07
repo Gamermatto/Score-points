@@ -94,8 +94,9 @@ document.addEventListener("touchend", function (event) {
 // Nasconde barra di ricerca
 window.addEventListener("load", () => {
   setTimeout(() => {
-    window.scrollTo(0, 1); // scroll verso il basso per nascondere la barra
-  }), 10
+    window.scrollTo(0, 1); // nasconde barra ricerca mobile
+  }, 10);
+});
 
 // Salva in localStorage
 function saveData() {
