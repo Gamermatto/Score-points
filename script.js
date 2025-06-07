@@ -30,7 +30,6 @@ document.querySelectorAll(".plus").forEach(btn => {
     scoreEl.textContent = scores[player - 1];
 
     // Suono
-    clickSound.currentTime = 0; // Riavvia se viene cliccato velocemente
     clickSound.play();
 
     // Animazione
