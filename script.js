@@ -105,3 +105,16 @@ function saveData() {
     names: [nameInputs[0].value, nameInputs[1].value]
   }));
 }
+
+// Menu toggle
+const menuToggleCheckbox = document.querySelector("#menuToggle input");
+const menu = document.getElementById("menu");
+
+// Mostra o nasconde il menu al click
+menuToggleCheckbox.addEventListener("change", () => {
+  if (menuToggleCheckbox.checked) {
+    menu.style.display = "block";
+  } else {
+    menu.style.display = "none";
+  }
+});
