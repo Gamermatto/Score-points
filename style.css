@@ -227,6 +227,8 @@ input[type="text"]:focus {
 
 /* Menu vero e proprio */
 #menu {
+  display: block !important;
+  background: lightyellow;
   position: fixed;
   top: 0;
   right: 0;
