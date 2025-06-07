@@ -174,3 +174,156 @@ input[type="text"]:focus {
     max-width: 50%;
   }
 }
+
+#menuToggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  user-select: none;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+}
+
+#menuToggle input {
+  display: block;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 20;
+}
+
+#menuToggle span {
+  display: block;
+  width: 30px;
+  height: 4px;
+  margin-bottom: 5px;
+  background: var(--color-text);
+  border-radius: 2px;
+  position: relative;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+/* Animazioni hamburger aperto */
+#menuToggle input:checked ~ span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 7px;
+  position: relative;
+}
+#menuToggle input:checked ~ span:nth-child(2) {
+  opacity: 0;
+}
+#menuToggle input:checked ~ span:nth-child(3) {
+  transform: rotate(-45deg);
+  top: -7px;
+  position: relative;
+}
+
+/* Menu vero e proprio */
+#menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 80vw;
+  max-width: 350px;
+  background: rgba(0, 0, 0, 0.85);
+  box-shadow: -3px 0 15px rgba(0,0,0,0.7);
+  padding: 20px;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  overflow-y: auto;
+  color: var(--color-text);
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  z-index: 9999;
+}
+
+/* Quando il menu è aperto */
+#menuToggle input:checked ~ #menu {
+  transform: translateX(0);
+}
+
+#menu h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: var(--color-accent);
+  font-size: 1.4rem;
+  border-bottom: 1px solid var(--color-accent);
+  padding-bottom: 8px;
+}
+
+/* Container scrollabile delle partite */
+#historyContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+/* Ogni partita */
+.history-item {
+  background-color: #111;
+  padding: 12px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  color: var(--color-text);
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Quadrati per nome e punti */
+.history-item div {
+  background-color: #222;
+  padding: 8px 12px;
+  border-radius: var(--radius);
+  flex: 1 1 40%;
+  min-width: 120px;
+  text-align: center;
+  user-select: none;
+}
+
+/* Bottone Fine partita */
+#endGame {
+  margin-top: 15px;
+  background-color: var(--color-accent);
+  color: var(--color-bg);
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 90%;
+  max-width: 280px;
+}
+
+#endGame:hover {
+  background-color: #008ba3;
+}
+
+@media screen and (max-width: 600px) {
+  #menuToggle {
+    width: 25px;
+    height: 22px;
+  }
+  #menuToggle span {
+    height: 3px;
+  }
+  #menu {
+    width: 90vw;
+  }
+  #endGame {
+    width: 95%;
+   }
+}
