@@ -202,6 +202,14 @@ input[type="text"]:focus {
   z-index: 1001;
 }
 
+.buttons-bottom {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 30px auto;
+  flex-wrap: wrap;
+}
+
 /* Le 3 linee */
 #menuToggle label span {
   display: block;
