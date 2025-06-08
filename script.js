@@ -1,4 +1,4 @@
-const clickSound = new Audio("270304__littlerobotsoundfactory__collect_point_00.mp3");
+const clickSound = new Audio("621282__welvynzportersamples__its-victory-or-the-grave-with-reverb.mp3");
 
 let scores = [0, 0, 0];
 const scoreEls = [
