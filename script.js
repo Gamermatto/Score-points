@@ -1,13 +1,15 @@
-const clickSound = new Audio("621282__welvynzportersamples__its-victory-or-the-grave-with-reverb.mp3");
+const clickSound = new Audio("270304__littlerobotsoundfactory__collect_point_00.mp3");
 
-let scores = [0, 0];
+let scores = [0, 0, 0];
 const scoreEls = [
   document.getElementById("score1"),
-  document.getElementById("score2")
+  document.getElementById("score2"),
+  document.getElementById("score3")
 ];
 const nameInputs = [
   document.getElementById("name1"),
-  document.getElementById("name2")
+  document.getElementById("name2"),
+  document.getElementById("name3")
 ];
 
 let historyGames = [];
@@ -17,10 +19,12 @@ window.addEventListener("DOMContentLoaded", () => {
   const saved = JSON.parse(localStorage.getItem("scoreData"));
   if (saved) {
     scores = saved.scores;
-    scoreEls[0].textContent = scores[0];
-    scoreEls[1].textContent = scores[1];
-    nameInputs[0].value = saved.names[0];
-    nameInputs[1].value = saved.names[1];
+    scores.forEach((score, i) => {
+      if (scoreEls[i]) scoreEls[i].textContent = score;
+    });
+    saved.names.forEach((name, i) => {
+      if (nameInputs[i]) nameInputs[i].value = name;
+    });
   }
 
   const savedHistory = JSON.parse(localStorage.getItem("gameHistory"));
@@ -38,11 +42,9 @@ document.querySelectorAll(".plus").forEach(btn => {
     const scoreEl = scoreEls[player - 1];
     scoreEl.textContent = scores[player - 1];
 
-    // Suono
     clickSound.currentTime = 0;
     clickSound.play().catch(err => console.warn("Audio non riprodotto:", err));
 
-    // Animazione e sparkle
     scoreEl.classList.add("bump");
     setTimeout(() => scoreEl.classList.remove("bump"), 300);
     for (let i = 0; i < 10; i++) createSparkle(e.clientX, e.clientY, player);
@@ -65,7 +67,7 @@ function createSparkle(x, y, player) {
 
 // Reset punteggi
 document.getElementById("reset").addEventListener("click", () => {
-  scores = [0, 0];
+  scores = [0, 0, 0];
   scoreEls.forEach(el => el.textContent = "0");
   saveData();
 });
@@ -95,7 +97,7 @@ window.addEventListener("load", () => {
 function saveData() {
   localStorage.setItem("scoreData", JSON.stringify({
     scores: scores,
-    names: [nameInputs[0].value, nameInputs[1].value]
+    names: nameInputs.map(input => input.value)
   }));
 }
 
@@ -109,6 +111,7 @@ function renderHistory() {
     item.innerHTML = `
       <div>${game.names[0]}: ${game.scores[0]} pt</div>
       <div>${game.names[1]}: ${game.scores[1]} pt</div>
+      <div>${game.names[2]}: ${game.scores[2]} pt</div>
     `;
     container.appendChild(item);
   });
@@ -117,13 +120,13 @@ function renderHistory() {
 // Fine partita
 document.getElementById("endGame").addEventListener("click", () => {
   historyGames.push({
-    names: [nameInputs[0].value, nameInputs[1].value],
+    names: nameInputs.map(input => input.value),
     scores: [...scores]
   });
   localStorage.setItem("gameHistory", JSON.stringify(historyGames));
   renderHistory();
 
-  scores = [0, 0];
+  scores = [0, 0, 0];
   scoreEls.forEach(el => el.textContent = "0");
   nameInputs.forEach((input, i) => input.value = `Giocatore ${i + 1}`);
   saveData();
