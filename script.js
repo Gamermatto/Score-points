@@ -1,15 +1,13 @@
-const clickSound = new Audio("270304__littlerobotsoundfactory__collect_point_00.mp3");
+const clickSound = new Audio("621282__welvynzportersamples__its-victory-or-the-grave-with-reverb.mp3");
 
-let scores = [0, 0, 0];
+let scores = [0, 0];
 const scoreEls = [
   document.getElementById("score1"),
-  document.getElementById("score2"),
-  document.getElementById("score3")
+  document.getElementById("score2")
 ];
 const nameInputs = [
   document.getElementById("name1"),
-  document.getElementById("name2"),
-  document.getElementById("name3")
+  document.getElementById("name2")
 ];
 
 let historyGames = [];
@@ -67,7 +65,7 @@ function createSparkle(x, y, player) {
 
 // Reset punteggi
 document.getElementById("reset").addEventListener("click", () => {
-  scores = [0, 0, 0];
+  scores = [0, 0];
   scoreEls.forEach(el => el.textContent = "0");
   saveData();
 });
@@ -111,7 +109,6 @@ function renderHistory() {
     item.innerHTML = `
       <div>${game.names[0]}: ${game.scores[0]} pt</div>
       <div>${game.names[1]}: ${game.scores[1]} pt</div>
-      <div>${game.names[2]}: ${game.scores[2]} pt</div>
     `;
     container.appendChild(item);
   });
@@ -126,7 +123,7 @@ document.getElementById("endGame").addEventListener("click", () => {
   localStorage.setItem("gameHistory", JSON.stringify(historyGames));
   renderHistory();
 
-  scores = [0, 0, 0];
+  scores = [0, 0];
   scoreEls.forEach(el => el.textContent = "0");
   nameInputs.forEach((input, i) => input.value = `Giocatore ${i + 1}`);
   saveData();
