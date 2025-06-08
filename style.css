@@ -37,8 +37,8 @@ h1 {
   background-color: var(--color-panel);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  padding: 20px 25px;
-  width: 280px;
+  padding: 14px 18px;
+  width: 180px;
   transition: transform 0.2s ease;
 }
 
@@ -48,14 +48,14 @@ h1 {
 
 input[type="text"] {
   width: 100%;
-  padding: 10px;
-  font-size: 18px;
+  padding: 8px;
+  font-size: 14px;
   text-align: center;
   background-color: #2c2c2c;
   color: var(--color-text);
   border: 1px solid #444;
   border-radius: var(--radius);
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   transition: border-color 0.2s;
 }
 
@@ -65,9 +65,9 @@ input[type="text"]:focus {
 }
 
 .score {
-  font-size: 48px;
+  font-size: 32px;
   font-weight: bold;
-  margin: 10px 0 20px;
+  margin: 8px 0 16px;
   color: var(--color-accent);
   transition: transform 0.2s ease;
 }
@@ -76,8 +76,8 @@ input[type="text"]:focus {
   background-color: var(--color-success);
   color: white;
   border: none;
-  padding: 14px;
-  font-size: 16px;
+  padding: 10px;
+  font-size: 14px;
   width: 100%;
   border-radius: var(--radius);
   cursor: pointer;
@@ -166,7 +166,7 @@ input[type="text"]:focus {
 
 @media (orientation: landscape) {
   .container {
-    flex-direction: row; /* orizzontale quando il dispositivo è in landscape */
+    flex-direction: row;
   }
 
   .player {
@@ -186,12 +186,10 @@ input[type="text"]:focus {
   cursor: pointer;
 }
 
-/* Nascondi checkbox */
 #menuToggle input[type="checkbox"] {
   display: none;
 }
 
-/* Label contiene le 3 linee */
 #menuToggle label {
   display: block;
   width: 30px;
@@ -210,7 +208,6 @@ input[type="text"]:focus {
   flex-wrap: wrap;
 }
 
-/* Le 3 linee */
 #menuToggle label span {
   display: block;
   width: 30px;
@@ -223,7 +220,6 @@ input[type="text"]:focus {
   transition: all 0.3s ease;
 }
 
-/* Animazioni hamburger aperto */
 #menuToggle input:checked + label span:nth-child(1) {
   transform: rotate(45deg);
   top: 7px;
@@ -238,17 +234,15 @@ input[type="text"]:focus {
   position: relative;
 }
 
-/* Menu vero e proprio */
 #menu {
   display: block !important;
-  background: lightyellow;
+  background: rgba(0, 0, 0, 0.85);
   position: fixed;
   top: 0;
   right: 0;
   height: 100vh;
   width: 80vw;
   max-width: 350px;
-  background: rgba(0, 0, 0, 0.85);
   box-shadow: -3px 0 15px rgba(0,0,0,0.7);
   padding: 20px;
   transform: translateX(100%);
@@ -259,7 +253,6 @@ input[type="text"]:focus {
   z-index: 1000;
 }
 
-/* Quando il menu è aperto */
 #menuToggle input:checked ~ #menu {
   transform: translateX(0);
 }
@@ -273,7 +266,6 @@ input[type="text"]:focus {
   padding-bottom: 8px;
 }
 
-/* Container scrollabile delle partite */
 #historyContainer {
   display: flex;
   flex-direction: column;
@@ -283,7 +275,6 @@ input[type="text"]:focus {
   padding-right: 6px;
 }
 
-/* Ogni partita */
 .history-item {
   background-color: #111;
   padding: 12px;
@@ -297,7 +288,6 @@ input[type="text"]:focus {
   flex-wrap: wrap;
 }
 
-/* Quadrati per nome e punti */
 .history-item div {
   background-color: #222;
   padding: 8px 12px;
@@ -308,7 +298,6 @@ input[type="text"]:focus {
   user-select: none;
 }
 
-/* Bottone Fine partita */
 #endGame {
   background-color: var(--color-danger);
   color: white;
@@ -342,3 +331,4 @@ input[type="text"]:focus {
   #endGame {
     width: 95%;
   }
+}
