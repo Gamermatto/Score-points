@@ -342,3 +342,52 @@ input[type="text"]:focus {
   #endGame {
     width: 95%;
   }
+  
+  /* Imposta box-sizing globale per evitare problemi di layout */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Correggi stili predefiniti dei bottoni */
+button {
+  background-color: var(--color-panel);
+  color: var(--color-text);
+  border: 1px solid #333;
+  border-radius: var(--radius);
+  padding: 10px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+/* Hover generico per i bottoni */
+button:hover {
+  background-color: var(--color-accent);
+  color: black;
+}
+
+/* Input generici (oltre al tipo text) */
+input {
+  background-color: #2c2c2c;
+  color: var(--color-text);
+  border: 1px solid #444;
+  border-radius: var(--radius);
+  padding: 10px;
+  font-family: inherit;
+}
+
+/* Aggiunta per evitare sfondi bianchi in caso di <form> o altri container */
+form, fieldset {
+  background-color: var(--color-panel);
+  color: var(--color-text);
+  border: none;
+  border-radius: var(--radius);
+  padding: 10px;
+  box-shadow: var(--shadow);
+}
+
+/* Correzione al colore hover di endGame che era errato */
+#endGame:hover {
+  background-color: #c62828;
+}
