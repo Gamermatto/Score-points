@@ -28,12 +28,14 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 40px;
   padding: 20px;
 }
 
 .player {
+  display: flex;
+  flex-wrap: nowrap;
   background-color: var(--color-panel);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
