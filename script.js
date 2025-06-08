@@ -1,6 +1,6 @@
-const clickSound = new Audio("621282__welvynzportersamples__its-victory-or-the-grave-with-reverb.mp3");
+const clickSound = new Audio("270304__littlerobotsoundfactory__collect_point_00.mp3");
 
-let scores = [0, 0];
+let scores = [0, 0, 0];
 const scoreEls = [
   document.getElementById("score1"),
   document.getElementById("score2")
@@ -65,7 +65,7 @@ function createSparkle(x, y, player) {
 
 // Reset punteggi
 document.getElementById("reset").addEventListener("click", () => {
-  scores = [0, 0];
+  scores = [0, 0, 0];
   scoreEls.forEach(el => el.textContent = "0");
   saveData();
 });
@@ -123,7 +123,7 @@ document.getElementById("endGame").addEventListener("click", () => {
   localStorage.setItem("gameHistory", JSON.stringify(historyGames));
   renderHistory();
 
-  scores = [0, 0];
+  scores = [0, 0, 0];
   scoreEls.forEach(el => el.textContent = "0");
   nameInputs.forEach((input, i) => input.value = `Giocatore ${i + 1}`);
   saveData();
